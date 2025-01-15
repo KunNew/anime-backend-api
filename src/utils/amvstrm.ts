@@ -20,11 +20,11 @@ export const getPopularAnime = async (
       }
     );
     console.log(baseUrl + `/popular?limit=${limit}&p=${page}`);
-    console.log("data", data);
+
 
     return data;
   } catch (err: any) {
-    console.log('err',err);
+    console.log('err',err.message);
 
     if (err.response || err.response.data) {
       return {
