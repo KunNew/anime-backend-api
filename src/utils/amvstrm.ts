@@ -1,6 +1,6 @@
 import axios from "axios";
 import httpStatus from "http-status";
-import { AnimeResult } from "../types/v1";
+import { IPopular } from "../types/v1";
 import { env } from "./env";
 
 const baseUrl: string = env.BACKEND_URL;
@@ -11,10 +11,8 @@ const BASE_BACKEND_URL: string = env.BASE_BACKEND_URL;
 export const getPopularAnime = async (
   limit: number,
   page: number
-): Promise<AnimeResult> => {
+): Promise<IPopular> => {
   try {
-    console.log("err", baseUrl + `/popular?limit=${limit}&p=${page}`);
-
     const { data } = await axios.get(
       baseUrl + `/popular?limit=${limit}&p=${page}`,
       {

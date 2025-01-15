@@ -1,14 +1,14 @@
 import httpStatus from "http-status";
-import { AnimeResult } from "../types/v1";
-import { getPopularAnime } from "../utils/amvstrm";
 
-const popular = async (p: number, limit: number): Promise<AnimeResult> => {
+import { getPopularAnime } from "../utils/amvstrm";
+import { IPopular } from "../types/v1";
+
+const popular = async (p: number, limit: number): Promise<IPopular> => {
   try {
     const data = await getPopularAnime(p, limit);
-    return {
-      pageInfo: data.pageInfo,
-      results: data.results,
-    };
+
+    return data;
+    
   } catch (err: any) {
     if (err.response) {
       return {
