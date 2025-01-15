@@ -31,6 +31,7 @@ export function middlewares(app: Elysia) {
     .use(
       cors({
         origin: "*",
+        preflight: true,
       })
     )
     .use(
