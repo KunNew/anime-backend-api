@@ -12,13 +12,8 @@ export const v1Routes = (app: Elysia) => {
         return {
           code: 200,
           message: "success",
-          // page: data.pageInfo,
-          // results: data.results,
-          results: [
-            {
-              id: '01'
-            }
-          ]
+          page: data.pageInfo,
+          results: data.results,
         };
       } catch (err) {
         set.status = err.code || 500;

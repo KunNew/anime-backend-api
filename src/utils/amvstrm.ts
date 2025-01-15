@@ -14,8 +14,6 @@ export const getPopularAnime = async (
   page: number
 ): Promise<AnimeResult> => {
   try {
-
-
     const { data } = await axios.get(
       baseUrl + `/popular?limit=${limit}&p=${page}`,
       {
