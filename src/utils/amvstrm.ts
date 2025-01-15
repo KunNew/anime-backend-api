@@ -5,7 +5,6 @@ import { env } from "./env";
 
 const baseUrl: string = env.BACKEND_URL;
 
-
 // base backend url
 const BASE_BACKEND_URL: string = env.BASE_BACKEND_URL;
 
@@ -15,7 +14,7 @@ export const getPopularAnime = async (
 ): Promise<AnimeResult> => {
   try {
     const { data } = await axios.get(
-      baseUrl + `/popular?limit=${limit}&p=${page}`,
+      `https://api.amvstr.me/api/v2/popular?limit=${limit}&p=${page}`,
       {
         headers: { Accept: "application/json" },
       }
