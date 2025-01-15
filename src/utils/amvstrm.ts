@@ -13,10 +13,7 @@ export const getPopularAnime = async (
 ): Promise<AnimeResult> => {
   try {
     const { data } = await axios.get(
-      baseUrl + `/popular?limit=${limit}&p=${page}`,
-      {
-        headers: { Accept: "application/json" },
-      }
+      baseUrl + `/popular?limit=${limit}&p=${page}`
     );
     return data;
   } catch (err: any) {

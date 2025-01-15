@@ -9,18 +9,8 @@ services:
         value: https://api.amvstr.me/api/v2
       - key: BASE_BACKEND_URL
         value: https://api.amvstr.me
-      # - key: RATE_LIMIT_DURATION
-      #   value: 60000
-      # - key: BLOCK_WITH_CORS
-      #   value: false
-      # - key: HASH_IP
-      #   value: false
-      # - key: GOGOANIME_PROXY
-      #   value: "https://anitaku.pe"
-      # - key: ANILIST_PROXY
-      #   value: "https://graphql.anilist.co"
-      # - key: NODE_ENV
-      #   value: "production"
+      - key: NODE_ENV
+        value: "production"
       - key: BUN_VERSION
         value: "1.1.43"
     region: oregon
