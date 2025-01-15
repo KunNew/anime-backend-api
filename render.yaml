@@ -1,0 +1,27 @@
+services:  
+  - type: web
+    name: anime-backend-api
+    runtime: node
+    repo: https://github.com/KunNew/anime-backend-api
+    plan: free
+    envVars:
+      # - key: RATE_LIMIT
+      #   value: 80
+      # - key: RATE_LIMIT_DURATION
+      #   value: 60000
+      # - key: BLOCK_WITH_CORS
+      #   value: false
+      # - key: HASH_IP
+      #   value: false
+      # - key: GOGOANIME_PROXY
+      #   value: "https://anitaku.pe"
+      # - key: ANILIST_PROXY
+      #   value: "https://graphql.anilist.co"
+      # - key: NODE_ENV
+      #   value: "production"
+      - key: BUN_VERSION
+        value: "1.1.0"
+    region: oregon
+    buildCommand: bun install
+    startCommand: bun start
+version: "1"
