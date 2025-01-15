@@ -3,10 +3,11 @@ import { setupRoutes } from "./routes";
 import { middlewares } from "./middlewares";
 
 const app = new Elysia();
-app.get("/", () => "Hello Elysia");
+
 const port = process.env.PORT || 8080;
 
 middlewares(app);
+
 setupRoutes(app);
 
 app.listen(port);
