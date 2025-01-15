@@ -1,3 +1,4 @@
+import cors from "@elysiajs/cors";
 import swagger from "@elysiajs/swagger";
 import Elysia from "elysia";
 import { HttpStatusCode } from "elysia-http-status-code";
@@ -27,6 +28,12 @@ export const errorHandler = ({ code, httpStatus, error }) => {
 
 export function middlewares(app: Elysia) {
   return app
+    .use(
+      cors({
+        origin: "*",
+        preflight: true,
+      })
+    )
     .use(
       swagger({
         autoDarkMode: true,
