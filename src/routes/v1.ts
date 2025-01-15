@@ -9,8 +9,7 @@ export const v1Routes = (app: Elysia) => {
           query.p ? parseInt(query.p) : 1,
           query.limit ? parseInt(query.limit) : 20
         );
-        console.log(data);
-        
+
         return {
           code: 200,
           message: "success",

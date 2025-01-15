@@ -14,13 +14,18 @@ export const getPopularAnime = async (
 ): Promise<AnimeResult> => {
   try {
     const { data } = await axios.get(
-      `https://api.amvstr.me/api/v2/popular?limit=${limit}&p=${page}`,
+      baseUrl + `/popular?limit=${limit}&p=${page}`,
       {
         headers: { Accept: "application/json" },
       }
     );
+    console.log(baseUrl + `/popular?limit=${limit}&p=${page}`);
+    console.log("data", data);
+
     return data;
   } catch (err: any) {
+    console.log('err',err);
+
     if (err.response || err.response.data) {
       return {
         code: err.response.status,
