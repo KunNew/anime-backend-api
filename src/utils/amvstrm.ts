@@ -8,7 +8,7 @@ const baseUrl: string = env.BACKEND_URL;
 export const getPopularAnime = async (
   limit: number,
   page: number
-): Promise<IPopular> => {
+) => {
   try {
     const { data } = await axios.get(
       baseUrl + `/popular?limit=${limit}&p=${page}`,
@@ -16,16 +16,16 @@ export const getPopularAnime = async (
         headers: { Accept: "application/json" },
       }
     );
-console.log('datadata',data);
-
-    return data;
+    return data as IPopular;
   } catch (err: any) {
-    if (err.response || err.response.data) {
-      return {
-        code: err.response.status,
-        message: httpStatus[`${err.response.status}_MESSAGE`] || err.message,
-      } as any;
-    }
+    console.log(err);
+    
+    // if (err.response || err.response.data) {
+    //   return {
+    //     code: err.response.status,
+    //     message: httpStatus[`${err.response.status}_MESSAGE`] || err.message,
+    //   } as any;
+    // }
     throw err;
   }
 };
