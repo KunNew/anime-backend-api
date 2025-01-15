@@ -20,12 +20,12 @@ export const getPopularAnime = async (
   } catch (err: any) {
     console.log(err);
     
-    // if (err.response || err.response.data) {
-    //   return {
-    //     code: err.response.status,
-    //     message: httpStatus[`${err.response.status}_MESSAGE`] || err.message,
-    //   } as any;
-    // }
+    if (err.response || err.response.data) {
+      return {
+        code: err.response.status,
+        message: httpStatus[`${err.response.status}_MESSAGE`] || err.message,
+      } as any;
+    }
     throw err;
   }
 };
