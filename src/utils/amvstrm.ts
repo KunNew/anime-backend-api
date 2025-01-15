@@ -5,9 +5,6 @@ import { env } from "./env";
 
 const baseUrl: string = env.BACKEND_URL;
 
-// base backend url
-const BASE_BACKEND_URL: string = env.BASE_BACKEND_URL;
-
 export const getPopularAnime = async (
   limit: number,
   page: number
@@ -19,11 +16,10 @@ export const getPopularAnime = async (
         headers: { Accept: "application/json" },
       }
     );
+console.log('datadata',data);
 
     return data;
   } catch (err: any) {
-    console.log("err", err.response.data);
-
     if (err.response || err.response.data) {
       return {
         code: err.response.status,
