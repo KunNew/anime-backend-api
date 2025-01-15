@@ -6,8 +6,8 @@ const app = new Elysia();
 app.get("/", () => "Hello Elysia");
 const port = process.env.PORT || 8080;
 
-setupRoutes(app);
 middlewares(app);
+setupRoutes(app);
 
 app.listen(port);
 

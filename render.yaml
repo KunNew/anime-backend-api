@@ -1,12 +1,14 @@
-services:  
+services:
   - type: web
     name: anime-backend-api
     runtime: node
     repo: https://github.com/KunNew/anime-backend-api
     plan: free
     envVars:
-      # - key: RATE_LIMIT
-      #   value: 80
+      - key: BACKEND_URL
+        value: https://api.amvstr.me/api/v2
+      - key: BASE_BACKEND_URL
+        value: https://api.amvstr.me
       # - key: RATE_LIMIT_DURATION
       #   value: 60000
       # - key: BLOCK_WITH_CORS
