@@ -10,6 +10,7 @@ const envVariables = z.object({
   PROXY_URL: z.string().default(""),
   BACKEND_URL: z.string().default("https://api.amvstr.me/api/v2"),
   BASE_BACKEND_URL: z.string().default("https://api.amvstr.me"),
+  ANILIST_PROXY: z.string().default("https://graphql.anilist.co"),
   HASH_IP: z.preprocess(Boolean, z.boolean()).default(false),
 });
 

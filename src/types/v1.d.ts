@@ -21,6 +21,26 @@ export type ITag = {
   name: string;
 };
 
+export type IDate = {
+  year: number;
+  month: number;
+  day: number;
+};
+
+export type IProvider = {
+  idGogo: string;
+  idGogoDub: string;
+  idZoro: string;
+  idPahe: string;
+};
+
+export type ITrending = {
+  code: number;
+  message: string;
+  page: IPage;
+  results: IAnime[];
+};
+
 export type IPopular = {
   code: number;
   message: string;
@@ -40,6 +60,17 @@ export type INextAiringEpisode = {
   timeUntilAiring: number;
   episode: number;
 };
+
+export type IScore = {
+  averageScore: number;
+  decimalScore: number;
+};
+
+export type IStudios = {
+  name: string;
+};
+
+
 
 export type IAnime = {
   animeId: string;
@@ -65,4 +96,41 @@ export type IAnime = {
   seasonYear: number;
   averageScore: number;
   nextAiringEpisode: INextAiringEpisode;
+};
+
+
+export type IAnimeInfo = {
+  bannerImage: string;
+  coverImage: ICoverImage;
+  description: string;
+  dub: boolean;
+  duration: number;
+  endIn: IDate;
+  episodes: number;
+  format: string;
+  genres: string[];
+  id: string;
+  id_provider: IProvider;
+  nextair: INextAiringEpisode;
+  popularity: number;
+  relation: IAnime[];
+  season: string;
+  siteUrl: string;
+  studios: IStudios[];
+  tags: ITag[];
+  title: ITitle;
+  year: number;
+  score: IScore;
+};
+
+interface Episode {
+  episodeNumber: number;
+  episodeId: string;
+}
+
+export type ISearchedAnime = {
+  code: number;
+  message: string;
+  page: IPage;
+  results: IAnime[];
 };

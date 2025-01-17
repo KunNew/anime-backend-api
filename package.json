@@ -6,6 +6,7 @@
     "dev": "bun run --watch src/index.ts"
   },
   "dependencies": {
+    "@consumet/extensions": "^1.8.1",
     "@elysiajs/cors": "^1.2.0",
     "@elysiajs/swagger": "^1.1.5",
     "axios": "^1.7.9",
